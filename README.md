@@ -1,4 +1,4 @@
-# linuxncbkp
+# Nextcloud and Piwigo backup on linux
 
 bash scripts to backup a nextcloud server and piwigo server on linux ubuntu.
 
