@@ -1,0 +1,8 @@
+mariadbHostName
+nextcloudUserName
+nextcloudUserPassword
+nextcloudDbName
+piwigoUserName
+piwigoUserPassword
+piwigoDbName
+path/to/dump/files
