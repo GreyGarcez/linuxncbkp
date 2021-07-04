@@ -1,0 +1,4 @@
+--stats --show-rc --compression lz4
+/my/path/to/backup/folder
+MySuperSecureAndLongPassword
+--keep-within=5d --keep-daily=10 --keep-weekly=8 --keep-monthly=9 --keep-yearly=2
