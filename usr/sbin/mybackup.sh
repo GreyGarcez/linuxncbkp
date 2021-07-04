@@ -1,9 +1,10 @@
 #!/bin/bash -ue
 
-exec &> /path/to/bkplog/"$(date '+%Y-%m-%d')"
+logfile="/path/to/bkplog/$(date '+%Y-%m-%d').log"
+exec >$logfile 2>&1
 
 # definir archive
-ctd=$(date "+%Y-%m-%d-%H-%M")
+ctd=$(date "+%Y-%m-%d-%H%M")
 archive_name="$(hostname)-ncpwg-$ctd"
 
 # Funções
