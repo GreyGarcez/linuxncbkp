@@ -1,11 +1,11 @@
 #!/bin/bash -ue
 
-logfile="/path/to/bkplog/$(date '+%Y-%m-%d').log"
+ctdt=$(date "+%Y-%m-%d")
+logfile="/path/to/bkplog/$ctdt.log"
 exec >$logfile 2>&1
 
 # definir archive
-ctd=$(date "+%Y-%m-%d-%H%M")
-archive_name="$(hostname)-ncpwg-$ctd"
+archive_name="$(hostname)-ncpwg-$ctdt"
 
 # Funções
 function ncMaint {
@@ -41,8 +41,7 @@ function sqlDumpFile {
   # Arquivo é dumped somente se não há nenhum arquivo ou se não foi feito hoje
   local filename="$dest/$db-sql.bak"
   local doDump=1
-  if []; then
-    local ctdt=$(date "+%Y-%m-%d")
+  if [ -f $filename ]; then
     local filedate=$(stat -c %y $filename)
     filedate=${filedate%% *}
     if [ $filedate = $ctdt ]; then
